@@ -1,6 +1,8 @@
 import { style, globalStyle } from "@vanilla-extract/css"
 import { theme } from "../theme.css"
 
+export const markdownBlogPost = style({});
+
 export const blogPost = style({
   fontSize: theme.fontSizes[3],
 })
@@ -39,6 +41,15 @@ globalStyle(containedElements, {
 
 globalStyle(`${blogPost} p`, {
   lineHeight: theme.lineHeights.text,
+})
+
+globalStyle(`${blogPost} p:has(img)`, {
+  overflowX: 'auto',
+  maxWidth: '100%'
+})
+
+globalStyle(`${markdownBlogPost} p:has(img)`, {
+  overflowX: 'auto'
 })
 
 globalStyle(`${blogPost} > p:first-of-type`, {

@@ -60,7 +60,12 @@ export default function BlogPost(props) {
           )}
           <Space size={5} />
           {
-            post.isMarkdown ? <Markdown>{post.html}</Markdown>
+            post.isMarkdown 
+            ? <Markdown
+              className={styles.markdownBlogPost}
+              >
+              {post.html}
+              </Markdown>
             : <div
               className={styles.blogPost}
               dangerouslySetInnerHTML={{
